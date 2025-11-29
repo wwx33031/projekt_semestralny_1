@@ -296,58 +296,86 @@ function openCart() {
 
 function closeCart() {
   const cartModal = document.getElementById('cartModal');
+  const cartFooter = document.querySelector('.cart-footer');
+  
+  if (cartFooter) {
+    cartFooter.style.display = '';
+  }
+  
   if (cartModal) {
     cartModal.classList.remove('active');
+  }
+  
+  // Przywróć normalny widok koszyka jeśli był pokazany potwierdzenie
+  const cartItemsContainer = document.getElementById('cartItems');
+  if (cartItemsContainer && cart.length === 0) {
+    renderCart();
   }
 }
 
 function checkout() {
-  const dialog = document.getElementById('checkoutDialog');
-  
   if (cart.length === 0) {
-    if (dialog) {
-      document.getElementById('orderSummary').innerHTML = '<p style="text-align: center; color: var(--text-light);">Koszyk jest pusty!</p>';
-      dialog.showModal();
-    }
     return;
   }
   
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const orderSummary = document.getElementById('orderSummary');
+  const cartItemsContainer = document.getElementById('cartItems');
+  const cartFooter = document.querySelector('.cart-footer');
   
-  if (orderSummary) {
-    let html = '<div class="order-items">';
-    html += '<h3>Zamówione dania:</h3>';
-    html += '<ul>';
-    
-    cart.forEach((item) => {
-      const itemTotal = item.price * item.quantity;
-      html += `<li><strong>${item.name}</strong> - ${item.quantity}x × ${item.price} zł = ${itemTotal} zł</li>`;
-    });
-    
-    html += '</ul>';
-    html += `<div class="order-total"><strong>Suma całkowita: ${total} zł</strong></div>`;
-    html += '<p class="order-message">Zamówienie zostało przyjęte! Dziękujemy!</p>';
-    html += '</div>';
-    
-    orderSummary.innerHTML = html;
-  }
+  if (!cartItemsContainer || !cartFooter) return;
   
-  if (dialog) {
-    dialog.showModal();
-  }
+  // Ukryj footer z przyciskiem zamówienia
+  cartFooter.style.display = 'none';
+  
+  // Pokaż potwierdzenie zamówienia
+  let html = '<div class="order-confirmation">';
+  html += '<div class="success-icon">✓</div>';
+  html += '<h2 class="confirmation-title">Dziękujemy za zamówienie!</h2>';
+  html += '<div class="order-summary-cart">';
+  html += '<h3>Zamówione dania:</h3>';
+  html += '<ul class="order-list">';
+  
+  cart.forEach((item) => {
+    const itemTotal = item.price * item.quantity;
+    html += `
+      <li class="order-item">
+        <div class="order-item-info">
+          <strong>${item.name}</strong>
+          <span>${item.quantity}x × ${item.price} zł</span>
+        </div>
+        <strong class="order-item-price">${itemTotal} zł</strong>
+      </li>
+    `;
+  });
+  
+  html += '</ul>';
+  html += `<div class="order-total-cart"><span>Suma całkowita:</span><strong>${total} zł</strong></div>`;
+  html += '<p class="confirmation-message">Zamówienie zostało przyjęte! Dziękujemy!</p>';
+  html += '</div>';
+  html += '<button class="close-confirmation-btn" onclick="closeCartAfterOrder()">Zamknij</button>';
+  html += '</div>';
+  
+  cartItemsContainer.innerHTML = html;
+  
+  // Wyczyszczenie koszyka
+  cart = [];
+  updateCartCount();
 }
 
-function closeCheckoutDialog() {
-  const dialog = document.getElementById('checkoutDialog');
-  if (dialog) {
-    dialog.close();
-    // Wyczyszczenie koszyka po zamknięciu
-    cart = [];
-    updateCartCount();
-    renderCart();
-    closeCart();
+function closeCartAfterOrder() {
+  const cartModal = document.getElementById('cartModal');
+  const cartFooter = document.querySelector('.cart-footer');
+  
+  if (cartFooter) {
+    cartFooter.style.display = '';
   }
+  
+  if (cartModal) {
+    cartModal.classList.remove('active');
+  }
+  
+  // Przywróć normalny widok koszyka
+  renderCart();
 }
 
 // Zamknięcie modala po kliknięciu poza nim
