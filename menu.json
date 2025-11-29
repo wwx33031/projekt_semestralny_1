@@ -1,0 +1,95 @@
+{
+  "categories": [
+    {
+      "id": "antipasti",
+      "name": "Antipasti",
+      "items": [
+        {
+          "id": "bruschetta-classica",
+          "name": "Bruschetta Classica",
+          "description": "Bruschetta z grillowanym chlebem, świeżymi pomidorami, bazylią i oliwą z oliwek extra virgin",
+          "price": 34
+        },
+        {
+          "id": "prosciutto-melone",
+          "name": "Prosciutto e Melone",
+          "description": "Sałatka z cienko krojoną prosciutto di Parma z świeżym melonem",
+          "price": 46
+        },
+        {
+          "id": "calamari-fritti",
+          "name": "Calamari Fritti",
+          "description": "Sałatka z chrupiącymi pierścieniami kalmarów podawana z sosem marinara",
+          "price": 62
+        },
+        {
+          "id": "caprese-salad",
+          "name": "Caprese Salad",
+          "description": "Sałatka Caprese z świeżą mozzarellą, pomidorami i bazylią polana sosem balsamicznym",
+          "price": 56
+        }
+      ]
+    },
+    {
+      "id": "insalate",
+      "name": "Insalate",
+      "items": [
+        {
+          "id": "insalata-mista",
+          "name": "Insalata Mista",
+          "description": "Sałatka mieszana z pomidorkami cherry, ogórkiem i sosem vinaigrette",
+          "price": 40
+        },
+        {
+          "id": "insalata-rucola",
+          "name": "Insalata di Rucola",
+          "description": "Sałatka rukolowa z parmezanem, orzeszkami piniowymi i sosem cytrynowym",
+          "price": 48
+        },
+        {
+          "id": "caesar-italiana",
+          "name": "Caesar Italiana",
+          "description": "Sałatka Cezar z sałatą rzymską, parmezanem, grzankami i autentycznym sosem Cezar",
+          "price": 44
+        },
+        {
+          "id": "insalata-mare",
+          "name": "Insalata di Mare",
+          "description": "Sałatka owocowa z krewetkami, kalmarami i ośmiornicą w sosie cytrynowym",
+          "price": 78
+        }
+      ]
+    },
+    {
+      "id": "primi-piatti",
+      "name": "Primi Piatti",
+      "items": [
+        {
+          "id": "spaghetti-carbonara",
+          "name": "Spaghetti Carbonara",
+          "description": "Spaghetti z jajkami, serem pecorino i pancettą",
+          "price": 78
+        },
+        {
+          "id": "risotto-funghi",
+          "name": "Risotto ai Funghi",
+          "description": "Risotto grzybowe z porcini i olejem truflowym",
+          "price": 88
+        },
+        {
+          "id": "osso-buco",
+          "name": "Osso Buco",
+          "description": "Osso Buco z risotto szafranowym i gremolatą",
+          "price": 128
+        },
+        {
+          "id": "saltimbocca-romana",
+          "name": "Saltimbocca Alla Romana",
+          "description": "Sznycel cielęcy z szynką parmeńską, szałwią i sosem z białego wina",
+          "price": 112
+        }
+      ]
+    }
+  ]
+}
+
