@@ -16,8 +16,8 @@ async function loadMenu() {
   }
 }
 
-// Renderowanie menu na stronie z opcjonalnym filtrem
-function renderMenu(menuData, searchFilter = '') {
+// Renderowanie menu na stronie z opcjonalnym filtrem i sortowaniem
+function renderMenu(menuData, searchFilter = '', sortOrder = '') {
   const menuContainer = document.getElementById('menu-container');
   if (!menuContainer) {
     console.error('Nie znaleziono kontenera menu');
@@ -34,10 +34,17 @@ function renderMenu(menuData, searchFilter = '') {
   // Iteracja przez każdą kategorię
   menuData.categories.forEach((category) => {
     // Filtrowanie dań w kategorii po nazwie
-    const filteredItems = category.items.filter((item) => {
+    let filteredItems = category.items.filter((item) => {
       if (!searchFilter) return true;
       return item.name.toLowerCase().includes(searchFilter.toLowerCase());
     });
+
+    // Sortowanie dań po cenie
+    if (sortOrder === 'asc') {
+      filteredItems = filteredItems.sort((a, b) => a.price - b.price);
+    } else if (sortOrder === 'desc') {
+      filteredItems = filteredItems.sort((a, b) => b.price - a.price);
+    }
 
     // Jeśli nie ma żadnych dań po filtrowaniu, pomiń kategorię
     if (filteredItems.length === 0) {
@@ -57,7 +64,7 @@ function renderMenu(menuData, searchFilter = '') {
     const itemsContainer = document.createElement('div');
     itemsContainer.className = 'menu-items';
 
-    // Iteracja przez przefiltrowane dania
+    // Iteracja przez przefiltrowane i posortowane dania
     filteredItems.forEach((item) => {
       // Utworzenie elementu dania
       const menuItem = document.createElement('div');
@@ -96,20 +103,29 @@ function renderMenu(menuData, searchFilter = '') {
   menuContainer.appendChild(categoriesContainer);
 }
 
-// Funkcja obsługująca wyszukiwanie
-function setupSearch() {
+// Funkcja obsługująca wyszukiwanie i sortowanie
+function setupSearchAndSort() {
   const searchInput = document.getElementById('search-input');
-  if (!searchInput) {
-    return;
+  const sortSelect = document.getElementById('sort-select');
+
+  // Funkcja aktualizująca menu z aktualnymi wartościami filtru i sortowania
+  function updateMenu() {
+    if (!menuDataGlobal) return;
+
+    const searchTerm = searchInput ? searchInput.value.trim() : '';
+    const sortOrder = sortSelect ? sortSelect.value : '';
+    renderMenu(menuDataGlobal, searchTerm, sortOrder);
   }
 
   // Event listener dla pola wyszukiwania
-  searchInput.addEventListener('input', (e) => {
-    const searchTerm = e.target.value.trim();
-    if (menuDataGlobal) {
-      renderMenu(menuDataGlobal, searchTerm);
-    }
-  });
+  if (searchInput) {
+    searchInput.addEventListener('input', updateMenu);
+  }
+
+  // Event listener dla selecta sortowania
+  if (sortSelect) {
+    sortSelect.addEventListener('change', updateMenu);
+  }
 }
 
 // Inicjalizacja po załadowaniu strony
@@ -119,7 +135,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     menuDataGlobal = menuData;
     console.log('Menu zostało wczytane:', menuData);
     renderMenu(menuData);
-    setupSearch();
+    setupSearchAndSort();
   }
 });
 

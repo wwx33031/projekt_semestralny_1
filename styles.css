@@ -210,10 +210,14 @@ section > div > p {
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 #search-input {
-  width: 100%;
+  flex: 1;
+  min-width: 200px;
   padding: 1rem 1.5rem;
   font-size: 1rem;
   border: 2px solid var(--border-color);
@@ -231,6 +235,29 @@ section > div > p {
 
 #search-input::placeholder {
   color: var(--text-light);
+}
+
+#sort-select {
+  flex: 0 0 auto;
+  min-width: 180px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  transition: var(--transition);
+  background: var(--bg-light);
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+#sort-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+}
+
+#sort-select:hover {
+  border-color: var(--primary-color);
 }
 
 .menu-categories {
