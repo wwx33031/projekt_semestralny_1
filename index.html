@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
@@ -26,6 +27,11 @@
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
+          <button class="cart-button" onclick="openCart()">
+            <span class="cart-icon">🛒</span>
+            Koszyk
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
         </div>
       </nav>
     </header>
@@ -135,6 +141,27 @@
         </div>
       </div>
     </footer>
+
+    <!-- Modal koszyka -->
+    <div class="cart-modal" id="cartModal">
+      <div class="cart-content">
+        <div class="cart-header">
+          <h2>Twój koszyk</h2>
+          <button class="close-cart" onclick="closeCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+          <!-- Elementy koszyka będą dodawane dynamicznie -->
+        </div>
+        <div class="cart-footer">
+          <div class="cart-total">
+            <span>Suma:</span>
+            <span id="cartTotal">0 zł</span>
+          </div>
+          <button class="checkout-btn" onclick="checkout()">Zamów</button>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

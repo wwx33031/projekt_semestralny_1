@@ -168,8 +168,8 @@ section > div > p {
 
 /* ===== HERO SECTION ===== */
 #home {
-  background: linear-gradient(rgba(139, 38, 53, 0.9), rgba(107, 29, 40, 0.9)),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f5f5dc" width="1200" height="600"/></svg>');
+  background: linear-gradient(rgba(139, 38, 53, 0.95), rgba(107, 29, 40, 0.95)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%238b2635" width="1200" height="600"/></svg>');
   background-size: cover;
   background-position: center;
   color: white;
@@ -178,18 +178,21 @@ section > div > p {
   border-radius: 15px;
   margin: 2rem auto;
   max-width: 1200px;
+  box-shadow: var(--shadow-medium);
 }
 
 #home h2 {
   color: white;
   font-size: 3rem;
   margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #home > div > p {
   font-size: 1.3rem;
   margin-bottom: 2rem;
-  opacity: 0.95;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 #home a {
