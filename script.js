@@ -1,3 +1,6 @@
+// Zmienna globalna przechowująca dane menu
+let menuDataGlobal = null;
+
 // Wczytanie danych menu z pliku JSON
 async function loadMenu() {
   try {
@@ -13,13 +16,16 @@ async function loadMenu() {
   }
 }
 
-// Renderowanie menu na stronie
-function renderMenu(menuData) {
+// Renderowanie menu na stronie z opcjonalnym filtrem
+function renderMenu(menuData, searchFilter = '') {
   const menuContainer = document.getElementById('menu-container');
   if (!menuContainer) {
     console.error('Nie znaleziono kontenera menu');
     return;
   }
+
+  // Wyczyszczenie kontenera przed renderowaniem
+  menuContainer.innerHTML = '';
 
   // Utworzenie głównego kontenera dla kategorii
   const categoriesContainer = document.createElement('div');
@@ -27,6 +33,17 @@ function renderMenu(menuData) {
 
   // Iteracja przez każdą kategorię
   menuData.categories.forEach((category) => {
+    // Filtrowanie dań w kategorii po nazwie
+    const filteredItems = category.items.filter((item) => {
+      if (!searchFilter) return true;
+      return item.name.toLowerCase().includes(searchFilter.toLowerCase());
+    });
+
+    // Jeśli nie ma żadnych dań po filtrowaniu, pomiń kategorię
+    if (filteredItems.length === 0) {
+      return;
+    }
+
     // Utworzenie sekcji kategorii
     const categorySection = document.createElement('div');
     categorySection.className = 'menu-category';
@@ -40,8 +57,8 @@ function renderMenu(menuData) {
     const itemsContainer = document.createElement('div');
     itemsContainer.className = 'menu-items';
 
-    // Iteracja przez każde danie w kategorii
-    category.items.forEach((item) => {
+    // Iteracja przez przefiltrowane dania
+    filteredItems.forEach((item) => {
       // Utworzenie elementu dania
       const menuItem = document.createElement('div');
       menuItem.className = 'menu-item';
@@ -79,12 +96,30 @@ function renderMenu(menuData) {
   menuContainer.appendChild(categoriesContainer);
 }
 
+// Funkcja obsługująca wyszukiwanie
+function setupSearch() {
+  const searchInput = document.getElementById('search-input');
+  if (!searchInput) {
+    return;
+  }
+
+  // Event listener dla pola wyszukiwania
+  searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.trim();
+    if (menuDataGlobal) {
+      renderMenu(menuDataGlobal, searchTerm);
+    }
+  });
+}
+
 // Inicjalizacja po załadowaniu strony
 document.addEventListener('DOMContentLoaded', async () => {
   const menuData = await loadMenu();
   if (menuData) {
+    menuDataGlobal = menuData;
     console.log('Menu zostało wczytane:', menuData);
     renderMenu(menuData);
+    setupSearch();
   }
 });
 

@@ -205,6 +205,34 @@ section > div > p {
   box-shadow: var(--shadow);
 }
 
+.search-container {
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#search-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  transition: var(--transition);
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+}
+
+#search-input::placeholder {
+  color: var(--text-light);
+}
+
 .menu-categories {
   display: grid;
   gap: 3rem;
