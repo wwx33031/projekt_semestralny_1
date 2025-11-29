@@ -193,6 +193,52 @@ function updateCartCount() {
     cartCountElement.textContent = count;
     cartCountElement.style.display = count > 0 ? 'flex' : 'none';
   }
+  updateCartTooltip();
+}
+
+function updateCartTooltip() {
+  const tooltipContent = document.getElementById('tooltipContent');
+  if (!tooltipContent) return;
+  
+  if (cart.length === 0) {
+    tooltipContent.innerHTML = '<p>Koszyk jest pusty</p>';
+    return;
+  }
+  
+  let html = '<div class="tooltip-items">';
+  let total = 0;
+  
+  cart.forEach((item) => {
+    const itemTotal = item.price * item.quantity;
+    total += itemTotal;
+    html += `
+      <div class="tooltip-item">
+        <span class="tooltip-item-name">${item.name}</span>
+        <span class="tooltip-item-quantity">${item.quantity}x</span>
+        <span class="tooltip-item-price">${itemTotal} zł</span>
+      </div>
+    `;
+  });
+  
+  html += `<div class="tooltip-total"><strong>Suma: ${total} zł</strong></div>`;
+  html += '</div>';
+  
+  tooltipContent.innerHTML = html;
+}
+
+function showCartTooltip() {
+  const tooltip = document.getElementById('cartTooltip');
+  if (tooltip) {
+    updateCartTooltip();
+    tooltip.style.display = 'block';
+  }
+}
+
+function hideCartTooltip() {
+  const tooltip = document.getElementById('cartTooltip');
+  if (tooltip) {
+    tooltip.style.display = 'none';
+  }
 }
 
 function renderCart() {
@@ -256,21 +302,52 @@ function closeCart() {
 }
 
 function checkout() {
+  const dialog = document.getElementById('checkoutDialog');
+  
   if (cart.length === 0) {
-    alert('Koszyk jest pusty!');
+    if (dialog) {
+      document.getElementById('orderSummary').innerHTML = '<p style="text-align: center; color: var(--text-light);">Koszyk jest pusty!</p>';
+      dialog.showModal();
+    }
     return;
   }
   
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const itemsList = cart.map(item => `${item.name} (${item.quantity}x)`).join('\n');
+  const orderSummary = document.getElementById('orderSummary');
   
-  alert(`Dziękujemy za zamówienie!\n\nZamówione dania:\n${itemsList}\n\nSuma: ${total} zł\n\nZamówienie zostało przyjęte!`);
+  if (orderSummary) {
+    let html = '<div class="order-items">';
+    html += '<h3>Zamówione dania:</h3>';
+    html += '<ul>';
+    
+    cart.forEach((item) => {
+      const itemTotal = item.price * item.quantity;
+      html += `<li><strong>${item.name}</strong> - ${item.quantity}x × ${item.price} zł = ${itemTotal} zł</li>`;
+    });
+    
+    html += '</ul>';
+    html += `<div class="order-total"><strong>Suma całkowita: ${total} zł</strong></div>`;
+    html += '<p class="order-message">Zamówienie zostało przyjęte! Dziękujemy!</p>';
+    html += '</div>';
+    
+    orderSummary.innerHTML = html;
+  }
   
-  // Wyczyszczenie koszyka
-  cart = [];
-  updateCartCount();
-  renderCart();
-  closeCart();
+  if (dialog) {
+    dialog.showModal();
+  }
+}
+
+function closeCheckoutDialog() {
+  const dialog = document.getElementById('checkoutDialog');
+  if (dialog) {
+    dialog.close();
+    // Wyczyszczenie koszyka po zamknięciu
+    cart = [];
+    updateCartCount();
+    renderCart();
+    closeCart();
+  }
 }
 
 // Zamknięcie modala po kliknięciu poza nim

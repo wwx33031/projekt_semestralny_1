@@ -27,11 +27,22 @@
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
-          <button class="cart-button" onclick="openCart()">
-            <span class="cart-icon">🛒</span>
-            Koszyk
-            <span class="cart-count" id="cartCount">0</span>
-          </button>
+          <div
+            class="cart-button-wrapper"
+            onmouseenter="showCartTooltip()"
+            onmouseleave="hideCartTooltip()"
+          >
+            <button class="cart-button" onclick="openCart()">
+              <span class="cart-icon">🛒</span>
+              Koszyk
+              <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <div class="cart-tooltip" id="cartTooltip">
+              <div class="tooltip-content" id="tooltipContent">
+                <p>Koszyk jest pusty</p>
+              </div>
+            </div>
+          </div>
         </div>
       </nav>
     </header>
@@ -161,6 +172,21 @@
         </div>
       </div>
     </div>
+
+    <!-- Dialog checkout -->
+    <dialog id="checkoutDialog" class="checkout-dialog">
+      <div class="dialog-content">
+        <h2>Dziękujemy za zamówienie!</h2>
+        <div class="order-summary" id="orderSummary">
+          <!-- Podsumowanie zamówienia -->
+        </div>
+        <div class="dialog-actions">
+          <button class="dialog-btn" onclick="closeCheckoutDialog()">
+            Zamknij
+          </button>
+        </div>
+      </div>
+    </dialog>
 
     <script src="script.js"></script>
   </body>
