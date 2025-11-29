@@ -6,15 +6,16 @@
 }
 
 :root {
-  --primary-color: #c41e3a;
-  --primary-dark: #9a1629;
-  --secondary-color: #d4af37;
-  --accent-color: #8b4513;
+  /* Kolory włoskiej restauracji */
+  --primary-color: #8b2635; /* Bordo */
+  --primary-dark: #6b1d28; /* Ciemniejsze bordo */
+  --secondary-color: #3d5a1f; /* Ciemna zieleń */
+  --accent-color: #4a5d23; /* Ciemna zieleń - akcent */
   --text-dark: #2c2c2c;
   --text-light: #666;
-  --bg-light: #fafafa;
-  --bg-white: #ffffff;
-  --border-color: #e0e0e0;
+  --bg-light: #f5f5dc; /* Beż */
+  --bg-white: #fefefe; /* Lekko beżowy biały */
+  --border-color: #d4c4a8; /* Beżowy border */
   --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.15);
   --transition: all 0.3s ease;
@@ -87,7 +88,7 @@ nav ul li a:hover {
 .cart-button {
   position: relative;
   background: var(--secondary-color);
-  color: var(--text-dark);
+  color: white;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
@@ -101,7 +102,7 @@ nav ul li a:hover {
 }
 
 .cart-button:hover {
-  background: #b8941f;
+  background: var(--accent-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
@@ -154,8 +155,8 @@ section > div > p {
 
 /* ===== HERO SECTION ===== */
 #home {
-  background: linear-gradient(rgba(196, 30, 58, 0.9), rgba(154, 22, 41, 0.9)),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f5f5f5" width="1200" height="600"/></svg>');
+  background: linear-gradient(rgba(139, 38, 53, 0.9), rgba(107, 29, 40, 0.9)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f5f5dc" width="1200" height="600"/></svg>');
   background-size: cover;
   background-position: center;
   color: white;
@@ -194,7 +195,8 @@ section > div > p {
 #home a:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
-  background: #b8941f;
+  background: var(--accent-color);
+  color: white;
 }
 
 /* ===== MENU SECTION ===== */
@@ -550,7 +552,7 @@ section > div > p {
 }
 
 .remove-item {
-  background: #dc3545;
+  background: var(--primary-color);
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -561,7 +563,7 @@ section > div > p {
 }
 
 .remove-item:hover {
-  background: #c82333;
+  background: var(--primary-dark);
 }
 
 .cart-footer {
