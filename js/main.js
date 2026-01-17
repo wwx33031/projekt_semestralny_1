@@ -1,5 +1,32 @@
 // Główny moduł inicjalizacji aplikacji
 
+// Globalne callbacki dla koszyka (dostępne dla wszystkich funkcji)
+const cartCallbacks = {
+  onUpdate: () => {
+    updateCartCount();
+    renderCart();
+    saveCartToStorage(getCart());
+  }
+};
+
+// Ustaw globalne funkcje dla onclick w HTML (dostępne od razu)
+window.updateQuantity = (itemId, change) => {
+  updateQuantity(itemId, change, cartCallbacks);
+};
+
+window.removeFromCart = (itemId) => {
+  removeFromCart(itemId, cartCallbacks);
+};
+
+window.checkout = () => {
+  checkout({
+    onUpdate: () => {
+      updateCartCount();
+      saveCartToStorage(getCart());
+    }
+  });
+};
+
 // Inicjalizacja po załadowaniu strony
 document.addEventListener('DOMContentLoaded', async () => {
   // Wczytaj koszyk z localStorage
@@ -26,14 +53,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       const searchTerm = searchInput ? searchInput.value.trim() : "";
       const sortOrder = sortSelect ? sortSelect.value : "";
       
-      const cartCallbacks = {
-        onUpdate: () => {
-          updateCartCount();
-          renderCart();
-          saveCartToStorage(getCart());
-        },
-      };
-      
       renderMenu(menuDataGlobal, searchTerm, sortOrder, (item, button) => {
         addToCart(item, button, cartCallbacks);
       });
@@ -41,15 +60,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     menuDataGlobal = menuData;
     console.log('Menu zostało wczytane (z wygenerowanymi daniami):', menuData);
-    
-    // Callbacki dla koszyka
-    const cartCallbacks = {
-      onUpdate: () => {
-        updateCartCount();
-        renderCart();
-        saveCartToStorage(getCart());
-      }
-    };
     
     // Callback dla renderowania menu z funkcją addToCart
     const renderMenuWithCart = (menuData, searchFilter, sortOrder) => {
@@ -69,25 +79,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Zaktualizuj UI koszyka
     updateCartCount();
     renderCart();
-    
-    // Ustaw callback dla checkout
-    window.checkout = () => {
-      checkout({
-        onUpdate: () => {
-          updateCartCount();
-          saveCartToStorage(getCart());
-        }
-      });
-    };
-    
-    // Ustaw globalne funkcje dla onclick w HTML
-    window.updateQuantity = (itemId, change) => {
-      updateQuantity(itemId, change, cartCallbacks);
-    };
-    
-    window.removeFromCart = (itemId) => {
-      removeFromCart(itemId, cartCallbacks);
-    };
     
     // Funkcje z cartUI.js są już globalne, ale upewniamy się że są dostępne
     // showCartTooltip, hideCartTooltip, openCart, closeCart, closeCartAfterOrder
