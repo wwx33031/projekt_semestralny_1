@@ -1,7 +1,7 @@
 // Główny moduł inicjalizacji aplikacji
 
 // Globalne callbacki dla koszyka (dostępne dla wszystkich funkcji)
-const cartCallbacks = {
+let cartCallbacks = {
   onUpdate: () => {
     updateCartCount();
     renderCart();
@@ -9,26 +9,29 @@ const cartCallbacks = {
   }
 };
 
-// Ustaw globalne funkcje dla onclick w HTML (dostępne od razu)
-window.updateQuantity = (itemId, change) => {
-  updateQuantity(itemId, change, cartCallbacks);
-};
-
-window.removeFromCart = (itemId) => {
-  removeFromCart(itemId, cartCallbacks);
-};
-
-window.checkout = () => {
-  checkout({
-    onUpdate: () => {
-      updateCartCount();
-      saveCartToStorage(getCart());
-    }
-  });
-};
-
 // Inicjalizacja po załadowaniu strony
 document.addEventListener('DOMContentLoaded', async () => {
+  // Zapisz referencję do oryginalnej funkcji z cart.js przed nadpisaniem window.*
+  const originalUpdateQuantity = updateQuantity;
+  const originalRemoveFromCart = removeFromCart;
+  
+  // Ustaw globalne funkcje dla onclick w HTML (po załadowaniu wszystkich skryptów)
+  window.updateQuantity = (itemId, change) => {
+    originalUpdateQuantity(itemId, change, cartCallbacks);
+  };
+
+  window.removeFromCart = (itemId) => {
+    originalRemoveFromCart(itemId, cartCallbacks);
+  };
+
+  window.checkout = () => {
+    checkout({
+      onUpdate: () => {
+        updateCartCount();
+        saveCartToStorage(getCart());
+      }
+    });
+  };
   // Wczytaj koszyk z localStorage
   const savedCart = loadCartFromStorage();
   setCart(savedCart);
