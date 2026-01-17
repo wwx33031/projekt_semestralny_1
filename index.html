@@ -75,6 +75,20 @@
               <option value="asc">Cena: rosnąco</option>
               <option value="desc">Cena: malejąco</option>
             </select>
+            <button
+              id="generate-dishes-btn"
+              class="generate-dishes-btn"
+              onclick="generateNewDishes()"
+            >
+              Generuj inne dania
+            </button>
+            <button
+              id="generate-single-dish-btn"
+              class="generate-dishes-btn"
+              onclick="generateSingleDish()"
+            >
+              Generuj jedno danie
+            </button>
           </div>
 
           <div id="menu-container"></div>
@@ -174,11 +188,13 @@
     </div>
 
     <!-- Moduły JavaScript -->
+    <script src="js/constants.js"></script>
     <script src="js/storage.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/search.js"></script>
     <script src="js/cartUI.js"></script>
+    <script src="js/dishGenerator.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

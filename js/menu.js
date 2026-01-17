@@ -72,6 +72,18 @@ function renderMenu(menuData, searchFilter = '', sortOrder = '', addToCartCallba
       const menuItem = document.createElement('div');
       menuItem.className = 'menu-item';
 
+      // Dodanie obrazu dania (jeśli istnieje)
+      if (item.image) {
+        const itemImage = document.createElement('img');
+        itemImage.src = item.image;
+        itemImage.alt = item.name;
+        itemImage.className = 'menu-item-image';
+        itemImage.onerror = function() {
+          this.style.display = 'none';
+        };
+        menuItem.appendChild(itemImage);
+      }
+
       // Dodanie nazwy dania
       const itemName = document.createElement('h4');
       itemName.textContent = item.name;
