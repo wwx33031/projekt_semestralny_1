@@ -26,6 +26,8 @@
             <li><a href="#menu">Menu</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#reservation">Reservation</a></li>
           </ul>
           <div
             class="cart-button-wrapper"
@@ -107,6 +109,85 @@
         </div>
       </section>
 
+      <section id="reviews">
+        <div>
+          <h2>Opinie naszych klientów</h2>
+          <p>Co mówią o nas nasi klienci</p>
+        </div>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <h4>Julia P. (05.01.2026)</h4>
+            <p>Najlepsza restauracja w Warszawie!</p>
+            <span>★★★★☆</span>
+          </div>
+          <div class="review-card">
+            <h4>Marek S. (09.01.2026)</h4>
+            <p>Bardzo dobra robia pizze, ale trochę drogie</p>
+            <span>★★★☆☆</span>
+          </div>  
+          <div class="review-card">
+            <h4>Kasia K. (12.01.2026)</h4>
+            <p>Uwielbiam to miejsce! Najlepsze włoskie danie jakie kiedykolwiek jadłam!</p>
+            <span>★★★★☆</span>
+          </div>
+         </div>
+         <div class="review-form-wrapper">
+          <h3>Dodaj swoją opinię</h3>
+          <form id="review-form">
+            <div>
+              <label for="review-rating">Ocena</label>
+              <select id="review-rating" name="rating" required>
+                <option value="5">★★★★★</option>
+                <option value="4">★★★★</option>
+                <option value="3">★★★</option>
+                <option value="2">★★</option>
+                <option value="1">★ </option>
+                
+              </select>
+
+            </div>
+            <div>
+              <label for="review-text">Twoja opinia</label>
+              <textarea id="review-text" name="review" required></textarea>
+            </div>
+            <button type="submit">Wyślij</button>
+          </div>
+          </form>
+          <p id="review-success-message" class="review-success-message">Dziękujemy za dodanie opinii!</p>
+
+        </div>
+      </section>
+    <selection id="reservation">
+      <div>
+        <h2>Rezerwacja stolika</h2>
+        <p>Zarezerwuj stolik online</p>
+        <form id="reservation-form">
+          <div class="form-row">
+            <label for="res-name">Imię i nazwisko</label>
+            <input type="text" id="res-name" name="name" required>
+          </div>
+          <div class="form-row">
+            <label for="res-email">Email</label>
+            <input type="email" id="res-email" name="email" required>
+          </div>
+          <div class="form-row">
+            <label for="res-phone">Telefon</label>
+            <input type="tel" id="res-phone" name="phone" required>
+          </div>
+          <div class="form-row">
+            <label for="res-date">Data</label>
+            <input type="date" id="res-date" name="date" required>
+          </div>
+          <div class="form-row">
+            <label for="res-time">Godzina</label>
+            <input type="time" id="res-time" name="time" required>
+          </div>
+          <div class="form-row"></div>
+          <button type="submit">Zarezerwuj</button> 
+          }
+        </form>
+      </div>
+    </selection>
       <section id="contact">
         <div>
           <h2>Kontakt z nami</h2>
