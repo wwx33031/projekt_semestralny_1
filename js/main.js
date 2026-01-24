@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Zapisz referencję do oryginalnej funkcji z cart.js przed nadpisaniem window.*
   const originalUpdateQuantity = updateQuantity;
   const originalRemoveFromCart = removeFromCart;
+  const originalCheckout = checkout;
   
   // Ustaw globalne funkcje dla onclick w HTML (po załadowaniu wszystkich skryptów)
   window.updateQuantity = (itemId, change) => {
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   window.checkout = () => {
-    checkout({
+    originalCheckout({
       onUpdate: () => {
         updateCartCount();
         saveCartToStorage(getCart());
