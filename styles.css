@@ -1345,3 +1345,139 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background: var(--primary-dark);
 }
+
+/* ===== ORDER FORM IN CART MODAL ===== */
+.order-form-container {
+  padding: 1.5rem 2rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.order-form-container h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.order-form-row {
+  margin-bottom: 1.25rem;
+}
+
+.order-form-row label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.order-form-row input,
+.order-form-row textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: var(--transition-fast);
+  background: var(--bg-light);
+}
+
+.order-form-row input:focus,
+.order-form-row textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(139, 38, 53, 0.15);
+  background: var(--bg-white);
+}
+
+.order-form-row input::placeholder,
+.order-form-row textarea::placeholder {
+  color: var(--text-light);
+}
+
+.order-form-row textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.order-form-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.order-form-back-btn {
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  background: var(--bg-light);
+  color: var(--text-dark);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.order-form-back-btn:hover {
+  background: var(--bg-white);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.order-form-submit-btn {
+  flex: 2;
+  padding: 1rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-medium);
+}
+
+.order-form-submit-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-strong);
+}
+
+.order-form-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Order customer info in confirmation */
+.order-customer-info {
+  background: var(--bg-light);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  border-left: 4px solid var(--secondary-color);
+}
+
+.order-customer-info h4 {
+  color: var(--accent-color);
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.order-customer-info p {
+  margin: 0.35rem 0;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+.order-customer-info .order-notes {
+  color: var(--text-light);
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
+}

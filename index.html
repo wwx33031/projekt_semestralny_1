@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=3" />
   </head>
 
   <body>
@@ -263,7 +263,38 @@
             <span>Suma:</span>
             <span id="cartTotal">0 zł</span>
           </div>
-          <button class="checkout-btn" onclick="checkout()">Zamów</button>
+          <button class="checkout-btn" onclick="showOrderForm()">Zamów</button>
+        </div>
+        
+        <!-- Formularz zamówienia -->
+        <div class="order-form-container" id="orderFormContainer" style="display: none;">
+          <h3>Dane do zamówienia</h3>
+          <form id="orderForm" onsubmit="return submitOrder(event)">
+            <div class="order-form-row">
+              <label for="order-name">Imię i nazwisko *</label>
+              <input type="text" id="order-name" name="name" required placeholder="Jan Kowalski">
+            </div>
+            <div class="order-form-row">
+              <label for="order-phone">Telefon *</label>
+              <input type="tel" id="order-phone" name="phone" required placeholder="+48 123 456 789" pattern="[\+]?[0-9\s]{9,15}">
+            </div>
+            <div class="order-form-row">
+              <label for="order-email">Email</label>
+              <input type="email" id="order-email" name="email" placeholder="jan@example.com">
+            </div>
+            <div class="order-form-row">
+              <label for="order-address">Adres dostawy *</label>
+              <input type="text" id="order-address" name="address" required placeholder="ul. Przykładowa 12, 00-001 Warszawa">
+            </div>
+            <div class="order-form-row">
+              <label for="order-notes">Uwagi do zamówienia</label>
+              <textarea id="order-notes" name="notes" rows="3" placeholder="np. bez cebuli, dzwonek nie działa..."></textarea>
+            </div>
+            <div class="order-form-buttons">
+              <button type="button" class="order-form-back-btn" onclick="hideOrderForm()">Wróć</button>
+              <button type="submit" class="order-form-submit-btn">Złóż zamówienie</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -274,7 +305,7 @@
     <script src="js/menu.js?v=2"></script>
     <script src="js/cart.js?v=2"></script>
     <script src="js/search.js?v=2"></script>
-    <script src="js/cartUI.js?v=2"></script>
+    <script src="js/cartUI.js?v=3"></script>
     <script src="js/dishGenerator.js?v=2"></script>
     <script src="js/main.js?v=2"></script>
   </body>

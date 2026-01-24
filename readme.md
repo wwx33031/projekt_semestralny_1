@@ -60,6 +60,7 @@ Stworzenie funkcjonalnej strony internetowej dla restauracji, która umożliwi k
 | **Responsywny design**       | Dostosowanie do różnych urządzeń                | ✅ Zaimplementowane |
 | **Tooltip koszyka**          | Podgląd zawartości koszyka przy najechaniu      | ✅ Zaimplementowane |
 | **Potwierdzenie zamówienia** | Modal z podsumowaniem zamówienia                | ✅ Zaimplementowane |
+| **Formularz zamówienia**     | Dane klienta przy składaniu zamówienia          | ✅ Zaimplementowane |
 | **LocalStorage**             | Zapisywanie koszyka i wygenerowanych dań        | ✅ Zaimplementowane |
 | **Generowanie dań AI**       | Tworzenie nowych dań za pomocą OpenRouter API   | ✅ Zaimplementowane |
 | **Generowanie obrazów**      | Pobieranie obrazów dań z Foodish API            | ✅ Zaimplementowane |
@@ -74,6 +75,17 @@ Stworzenie funkcjonalnej strony internetowej dla restauracji, która umożliwi k
 - Automatyczne zapisywanie do LocalStorage
 - Tooltip z podglądem zawartości
 - Modal z pełnym widokiem koszyka
+
+#### 2. Formularz zamówienia
+
+- Formularz z danymi klienta:
+  - Imię i nazwisko (wymagane)
+  - Telefon (wymagane, z walidacją formatu)
+  - Email (opcjonalne)
+  - Adres dostawy (wymagane)
+  - Uwagi do zamówienia (opcjonalne)
+- Walidacja pól formularza
+- Potwierdzenie zamówienia z danymi klienta i listą zamówionych dań
 
 #### 2. Wyszukiwanie i sortowanie
 
@@ -303,18 +315,29 @@ renderMenu(menuData, "", "", (item, button) => {
 
 ### 4. `cartUI.js` - Interfejs koszyka
 
-**Opis:** Obsługuje elementy UI związane z koszykiem.
+**Opis:** Obsługuje elementy UI związane z koszykiem oraz formularz zamówienia.
 
 **Funkcje:**
 
-| Funkcja                 | Opis                                 |
-| ----------------------- | ------------------------------------ |
-| `showCartTooltip()`     | Pokazuje tooltip z podglądem koszyka |
-| `hideCartTooltip()`     | Ukrywa tooltip                       |
-| `openCart()`            | Otwiera modal koszyka                |
-| `closeCart()`           | Zamyka modal koszyka                 |
-| `checkout()`            | Przetwarza zamówienie                |
-| `closeCartAfterOrder()` | Zamyka modal po złożeniu zamówienia  |
+| Funkcja                 | Opis                                          |
+| ----------------------- | --------------------------------------------- |
+| `showCartTooltip()`     | Pokazuje tooltip z podglądem koszyka          |
+| `hideCartTooltip()`     | Ukrywa tooltip                                |
+| `openCart()`            | Otwiera modal koszyka                         |
+| `closeCart()`           | Zamyka modal koszyka                          |
+| `checkout()`            | Przetwarza zamówienie (legacy)                |
+| `closeCartAfterOrder()` | Zamyka modal po złożeniu zamówienia           |
+| `showOrderForm()`       | Pokazuje formularz zamówienia                 |
+| `hideOrderForm()`       | Ukrywa formularz i wraca do widoku koszyka    |
+| `submitOrder()`         | Waliduje i przetwarza formularz zamówienia    |
+
+**Przepływ składania zamówienia:**
+
+```
+Koszyk → [Zamów] → Formularz danych → [Złóż zamówienie] → Potwierdzenie
+                         ↑                                      ↓
+                     [Wróć]                               [Zamknij]
+```
 
 ### 5. `search.js` - Wyszukiwanie i sortowanie
 
@@ -411,14 +434,15 @@ const MODEL = "deepseek/deepseek-v3.2";
 
 ### Główne komponenty CSS
 
-| Komponent               | Opis                               |
-| ----------------------- | ---------------------------------- |
-| **Header & Navigation** | Sticky header z gradientem bordo   |
-| **Hero Section**        | Sekcja powitalna z przyciskiem CTA |
-| **Menu Grid**           | Responsywna siatka z kartami dań   |
-| **Cart Modal**          | Modal koszyka z animacjami         |
-| **Cart Tooltip**        | Tooltip z podglądem koszyka        |
-| **Footer**              | Stopka z ikonami social media      |
+| Komponent               | Opis                                   |
+| ----------------------- | -------------------------------------- |
+| **Header & Navigation** | Sticky header z gradientem bordo       |
+| **Hero Section**        | Sekcja powitalna z przyciskiem CTA     |
+| **Menu Grid**           | Responsywna siatka z kartami dań       |
+| **Cart Modal**          | Modal koszyka z animacjami             |
+| **Cart Tooltip**        | Tooltip z podglądem koszyka            |
+| **Order Form**          | Formularz danych przy składaniu zamówienia |
+| **Footer**              | Stopka z ikonami social media          |
 
 ### Responsywność
 
@@ -610,12 +634,12 @@ jobs:
 
 ### Zadania dodatkowe (POMYSŁY)
 
-| ID  | Zadanie                                            | Status  |
-| --- | -------------------------------------------------- | ------- |
-| #24 | Formularz wysyłkowy przy zamawianiu (LocalStorage) | POMYSŁY |
-| #25 | Dane w LocalStorage                                | POMYSŁY |
-| #26 | Dodanie AI do generowania dań                      | POMYSŁY |
-| #27 | Dodanie AI do generowania zdjęć dań                | POMYSŁY |
+| ID  | Zadanie                                            | Status       |
+| --- | -------------------------------------------------- | ------------ |
+| #24 | Formularz wysyłkowy przy zamawianiu (LocalStorage) | ✅ GOTOWE    |
+| #25 | Dane w LocalStorage                                | ✅ GOTOWE    |
+| #26 | Dodanie AI do generowania dań                      | ✅ GOTOWE    |
+| #27 | Dodanie AI do generowania zdjęć dań                | ✅ GOTOWE    |
 
 ---
 
@@ -625,7 +649,7 @@ jobs:
 
 | Ulepszenie              | Priorytet | Opis                                        |
 | ----------------------- | --------- | ------------------------------------------- |
-| Walidacja formularzy    | Wysoki    | Dodanie walidacji przy składaniu zamówienia |
+| ~~Walidacja formularzy~~| ✅ Gotowe | ~~Dodanie walidacji przy składaniu zamówienia~~ |
 | Obsługa błędów          | Wysoki    | Przyjazne komunikaty przy błędach API       |
 | Debouncing wyszukiwarki | Średni    | Optymalizacja przy większym menu            |
 | Lazy loading obrazów    | Średni    | Opóźnione ładowanie zdjęć dań               |
