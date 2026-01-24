@@ -1,0 +1,418 @@
+{
+  "board": {
+    "name": "PROJEKT SERMESTRALNY 1 - RESTAURACJA",
+    "shortLink": "nLKBrmGm",
+    "url": "https://trello.com/b/nLKBrmGm/projekt-sermestralny-1-restauracja"
+  },
+  "summary": {
+    "totalTasks": 27,
+    "extractedAt": "2026-01-24T08:59:02.348Z"
+  },
+  "tasks": [
+    {
+      "id": "68fc9cb4ef7e83068aff179f",
+      "idShort": 1,
+      "name": "https://www.loom.com/share/0e6813b76cd44ca48d892af56be658f5?sid=80638cfb-e43b-42df-8940-63f4811bb13f",
+      "shortLink": "1nFZvceN",
+      "status": "Trello Starter Guide",
+      "createdAt": "2025-10-25T09:47:32.253Z",
+      "lastUpdated": "2025-10-25T09:47:32.253Z",
+      "statusHistory": [
+        {
+          "status": "Trello Starter Guide",
+          "date": "2025-10-25T09:47:32.253Z"
+        }
+      ]
+    },
+    {
+      "id": "68fc9cb4ef7e83068aff17c2",
+      "idShort": 2,
+      "name": "Capture from email, Slack, and Teams",
+      "shortLink": "wAuuyXly",
+      "status": "Trello Starter Guide",
+      "createdAt": "2025-10-25T09:47:32.335Z",
+      "lastUpdated": "2025-10-25T09:47:32.335Z",
+      "statusHistory": [
+        {
+          "status": "Trello Starter Guide",
+          "date": "2025-10-25T09:47:32.335Z"
+        }
+      ]
+    },
+    {
+      "id": "68fc9cb4ef7e83068aff17c4",
+      "idShort": 3,
+      "name": "Download the mobile app",
+      "shortLink": "HBB0WuuS",
+      "status": "Trello Starter Guide",
+      "createdAt": "2025-10-25T09:47:32.332Z",
+      "lastUpdated": "2025-10-25T09:47:32.332Z",
+      "statusHistory": [
+        {
+          "status": "Trello Starter Guide",
+          "date": "2025-10-25T09:47:32.332Z"
+        }
+      ]
+    },
+    {
+      "id": "68fc9cb4ef7e83068aff1802",
+      "idShort": 4,
+      "name": "Dive into Trello basics",
+      "shortLink": "NcWCNmFa",
+      "status": "Trello Starter Guide",
+      "createdAt": "2025-10-25T09:47:32.445Z",
+      "lastUpdated": "2025-10-25T09:47:32.445Z",
+      "statusHistory": [
+        {
+          "status": "Trello Starter Guide",
+          "date": "2025-10-25T09:47:32.445Z"
+        }
+      ]
+    },
+    {
+      "id": "68fc9cb4ef7e83068aff1855",
+      "idShort": 5,
+      "name": "Work smarter",
+      "shortLink": "AId9Wx46",
+      "status": "Trello Starter Guide",
+      "createdAt": "2025-10-25T09:47:32.580Z",
+      "lastUpdated": "2025-10-25T09:47:32.580Z",
+      "statusHistory": [
+        {
+          "status": "Trello Starter Guide",
+          "date": "2025-10-25T09:47:32.580Z"
+        }
+      ]
+    },
+    {
+      "id": "68fc9cb4ef7e83068aff18a2",
+      "idShort": 6,
+      "name": "Manage your team's projects",
+      "shortLink": "3SP04riK",
+      "status": "Trello Starter Guide",
+      "createdAt": "2025-10-25T09:47:32.703Z",
+      "lastUpdated": "2025-10-25T09:47:32.703Z",
+      "statusHistory": [
+        {
+          "status": "Trello Starter Guide",
+          "date": "2025-10-25T09:47:32.703Z"
+        }
+      ]
+    },
+    {
+      "id": "68fc9cb71a886dec03b01e9b",
+      "idShort": 7,
+      "name": "Start using Trello",
+      "shortLink": "b1Tofn1O",
+      "status": "Today",
+      "createdAt": "2025-10-25T09:47:35.377Z",
+      "lastUpdated": "2025-10-25T09:47:35.377Z",
+      "statusHistory": [
+        {
+          "status": "Today",
+          "date": "2025-10-25T09:47:35.377Z"
+        }
+      ]
+    },
+    {
+      "id": "68fc9e7ba7ea1bec67d1dbae",
+      "idShort": 8,
+      "name": "Szablon HTML strony",
+      "shortLink": "cMjEGIYh",
+      "status": "W TRAKCIE",
+      "createdAt": "2025-10-25T09:55:07.403Z",
+      "lastUpdated": "2025-10-25T09:55:07.403Z",
+      "statusHistory": [
+        {
+          "status": "W TRAKCIE",
+          "date": "2025-10-25T09:55:07.403Z"
+        }
+      ]
+    },
+    {
+      "id": "68fc9ea5a19af1c9bf4eb1c4",
+      "idShort": 9,
+      "name": "Stylowanie HTMLa (CSS)",
+      "shortLink": "vtpWwZwf",
+      "status": "DO ZROBIENIA",
+      "createdAt": "2025-10-25T09:55:49.412Z",
+      "lastUpdated": "2025-10-25T09:55:49.412Z",
+      "statusHistory": [
+        {
+          "status": "DO ZROBIENIA",
+          "date": "2025-10-25T09:55:49.412Z"
+        }
+      ]
+    },
+    {
+      "id": "68fc9f8d6228217cd0196dd6",
+      "idShort": 10,
+      "name": "HTML - Dodać pusty kontener w sekcji #menu, np. <div id=\"menu-container\"></div>, do którego JS wstawi dane.",
+      "shortLink": "BGuacDXV",
+      "status": "POMYSŁY, ZADANIA DO DOPRACOWANIA",
+      "createdAt": "2025-10-25T09:59:41.166Z",
+      "lastUpdated": "2025-10-25T09:59:41.166Z",
+      "statusHistory": [
+        {
+          "status": "POMYSŁY, ZADANIA DO DOPRACOWANIA",
+          "date": "2025-10-25T09:59:41.166Z"
+        }
+      ]
+    },
+    {
+      "id": "68fc9fc0d956e6dbf12b3446",
+      "idShort": 11,
+      "name": "HTML - Dodać nagłówek strony i prosty hero z przyciskiem \"Zobacz menu\".",
+      "shortLink": "ANyNMtRR",
+      "status": "DO ZROBIENIA",
+      "createdAt": "2025-10-25T10:00:32.055Z",
+      "lastUpdated": "2025-10-25T10:00:32.055Z",
+      "statusHistory": [
+        {
+          "status": "DO ZROBIENIA",
+          "date": "2025-10-25T10:00:32.055Z"
+        }
+      ]
+    },
+    {
+      "id": "68fc9fc69c6edd8bf2c1239d",
+      "idShort": 12,
+      "name": "HTML - Dodać stopkę z ikonami social media.",
+      "shortLink": "Uxbyi2D7",
+      "status": "DO ZROBIENIA",
+      "createdAt": "2025-10-25T10:00:38.596Z",
+      "lastUpdated": "2025-10-25T10:00:38.596Z",
+      "statusHistory": [
+        {
+          "status": "DO ZROBIENIA",
+          "date": "2025-10-25T10:00:38.596Z"
+        }
+      ]
+    },
+    {
+      "id": "68fc9fd15d016b1efb0a9539",
+      "idShort": 13,
+      "name": "JSON - Utworzyć plik menu.json w tym samym katalogu",
+      "shortLink": "4HgFFOaK",
+      "status": "DO ZROBIENIA",
+      "createdAt": "2025-10-25T10:00:49.077Z",
+      "lastUpdated": "2025-10-25T10:00:49.077Z",
+      "statusHistory": [
+        {
+          "status": "DO ZROBIENIA",
+          "date": "2025-10-25T10:00:49.077Z"
+        }
+      ]
+    },
+    {
+      "id": "68fc9fe8af87b65ae79e3c82",
+      "idShort": 14,
+      "name": "JS - Wczytać dane z pliku JSON (np. fetch('menu.json')).",
+      "shortLink": "B3Rgd4CF",
+      "status": "DO ZROBIENIA",
+      "createdAt": "2025-10-25T10:01:12.636Z",
+      "lastUpdated": "2025-10-25T10:01:12.636Z",
+      "statusHistory": [
+        {
+          "status": "DO ZROBIENIA",
+          "date": "2025-10-25T10:01:12.636Z"
+        }
+      ]
+    },
+    {
+      "id": "68fc9ff3967eb37a282e8d75",
+      "idShort": 15,
+      "name": "JS - Dla każdej kategorii utworzyć sekcję z nazwą i listą dań.",
+      "shortLink": "yyO2rwiu",
+      "status": "DO ZROBIENIA",
+      "createdAt": "2025-10-25T10:01:23.118Z",
+      "lastUpdated": "2025-10-25T10:01:23.118Z",
+      "statusHistory": [
+        {
+          "status": "DO ZROBIENIA",
+          "date": "2025-10-25T10:01:23.118Z"
+        }
+      ]
+    },
+    {
+      "id": "68fc9ff8ed98daa038659215",
+      "idShort": 16,
+      "name": "JS - Każde danie wyświetlić jako kartę (div.menu-item), np. z nazwą, opisem i ceną.",
+      "shortLink": "ZTEl3biC",
+      "status": "DO ZROBIENIA",
+      "createdAt": "2025-10-25T10:01:28.633Z",
+      "lastUpdated": "2025-10-25T10:01:28.633Z",
+      "statusHistory": [
+        {
+          "status": "DO ZROBIENIA",
+          "date": "2025-10-25T10:01:28.633Z"
+        }
+      ]
+    },
+    {
+      "id": "68fc9fff20a8bd37a94f2289",
+      "idShort": 17,
+      "name": "JS - Dodać prostą wyszukiwarkę (input type=\"text\") filtrowującą po nazwie dania.",
+      "shortLink": "pj6rRBlr",
+      "status": "DO ZROBIENIA",
+      "createdAt": "2025-10-25T10:01:35.190Z",
+      "lastUpdated": "2025-10-25T10:01:35.190Z",
+      "statusHistory": [
+        {
+          "status": "DO ZROBIENIA",
+          "date": "2025-10-25T10:01:35.190Z"
+        }
+      ]
+    },
+    {
+      "id": "68fca0074b6cafe217f79458",
+      "idShort": 18,
+      "name": "JS - Dodać sortowanie po cenie rosnąco/malejąco (np. select z opcjami).",
+      "shortLink": "c9RmoN81",
+      "status": "DO ZROBIENIA",
+      "createdAt": "2025-10-25T10:01:43.121Z",
+      "lastUpdated": "2025-10-25T10:01:43.121Z",
+      "statusHistory": [
+        {
+          "status": "DO ZROBIENIA",
+          "date": "2025-10-25T10:01:43.121Z"
+        }
+      ]
+    },
+    {
+      "id": "68fca0182d9c215ab5b11149",
+      "idShort": 19,
+      "name": "CSS - czcionka z Google Fonts (np. Playfair Display),",
+      "shortLink": "dNsThZ9N",
+      "status": "DO ZROBIENIA",
+      "createdAt": "2025-10-25T10:02:00.115Z",
+      "lastUpdated": "2025-10-25T10:02:00.115Z",
+      "statusHistory": [
+        {
+          "status": "DO ZROBIENIA",
+          "date": "2025-10-25T10:02:00.115Z"
+        }
+      ]
+    },
+    {
+      "id": "68fca02120dda9a23228dcc4",
+      "idShort": 20,
+      "name": "CSS - kolorystyką w stylu włoskiej restauracji (beż, bordo, ciemna zieleń),",
+      "shortLink": "v3xlhraa",
+      "status": "DO ZROBIENIA",
+      "createdAt": "2025-10-25T10:02:09.072Z",
+      "lastUpdated": "2025-10-25T10:02:09.072Z",
+      "statusHistory": [
+        {
+          "status": "DO ZROBIENIA",
+          "date": "2025-10-25T10:02:09.072Z"
+        }
+      ]
+    },
+    {
+      "id": "68fca0310a1ec7140c0680f1",
+      "idShort": 21,
+      "name": "CSS - cienie i delikatne animacje hover.",
+      "shortLink": "cXz9khFE",
+      "status": "DO ZROBIENIA",
+      "createdAt": "2025-10-25T10:02:25.575Z",
+      "lastUpdated": "2025-10-25T10:02:25.575Z",
+      "statusHistory": [
+        {
+          "status": "DO ZROBIENIA",
+          "date": "2025-10-25T10:02:25.575Z"
+        }
+      ]
+    },
+    {
+      "id": "68fca0384568129c3e88d72a",
+      "idShort": 22,
+      "name": "CSS - Układ menu w siatce (display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));).",
+      "shortLink": "I3ZesXfn",
+      "status": "DO ZROBIENIA",
+      "createdAt": "2025-10-25T10:02:32.442Z",
+      "lastUpdated": "2025-10-25T10:02:32.442Z",
+      "statusHistory": [
+        {
+          "status": "DO ZROBIENIA",
+          "date": "2025-10-25T10:02:32.442Z"
+        }
+      ]
+    },
+    {
+      "id": "68fca047dc208f22953cf490",
+      "idShort": 23,
+      "name": "CSS - przykładowy design",
+      "shortLink": "Gfmk8el2",
+      "status": "DO ZROBIENIA",
+      "createdAt": "2025-10-25T10:02:47.131Z",
+      "lastUpdated": "2025-10-25T10:02:47.131Z",
+      "statusHistory": [
+        {
+          "status": "DO ZROBIENIA",
+          "date": "2025-10-25T10:02:47.131Z"
+        }
+      ]
+    },
+    {
+      "id": "692ad6a2f76f7d07b7f02434",
+      "idShort": 24,
+      "name": "formularz wysylkowy przy zamawianiu (localstorage)",
+      "shortLink": "3Dx7Rxe5",
+      "status": "POMYSŁY, ZADANIA DO DOPRACOWANIA",
+      "createdAt": "2025-11-29T11:18:58.186Z",
+      "lastUpdated": "2025-11-29T11:18:58.186Z",
+      "statusHistory": [
+        {
+          "status": "POMYSŁY, ZADANIA DO DOPRACOWANIA",
+          "date": "2025-11-29T11:18:58.186Z"
+        }
+      ]
+    },
+    {
+      "id": "692ad6ae7128c5265aa5c139",
+      "idShort": 25,
+      "name": "dane w localstorage",
+      "shortLink": "EVwEc1v2",
+      "status": "POMYSŁY, ZADANIA DO DOPRACOWANIA",
+      "createdAt": "2025-11-29T11:19:10.342Z",
+      "lastUpdated": "2025-11-29T11:19:10.342Z",
+      "statusHistory": [
+        {
+          "status": "POMYSŁY, ZADANIA DO DOPRACOWANIA",
+          "date": "2025-11-29T11:19:10.342Z"
+        }
+      ]
+    },
+    {
+      "id": "696b4314f6fdd2a5b94d72f8",
+      "idShort": 26,
+      "name": "dodanie AI do generowania dań",
+      "shortLink": "bcyvuu6S",
+      "status": "POMYSŁY, ZADANIA DO DOPRACOWANIA",
+      "createdAt": "2026-01-17T08:06:44.439Z",
+      "lastUpdated": "2026-01-17T08:06:44.439Z",
+      "statusHistory": [
+        {
+          "status": "POMYSŁY, ZADANIA DO DOPRACOWANIA",
+          "date": "2026-01-17T08:06:44.439Z"
+        }
+      ]
+    },
+    {
+      "id": "696b431c1a186488b4dbfd29",
+      "idShort": 27,
+      "name": "dodanie AI do generowania zdjęć dań",
+      "shortLink": "C4eS1mRH",
+      "status": "POMYSŁY, ZADANIA DO DOPRACOWANIA",
+      "createdAt": "2026-01-17T08:06:52.342Z",
+      "lastUpdated": "2026-01-17T08:06:52.342Z",
+      "statusHistory": [
+        {
+          "status": "POMYSŁY, ZADANIA DO DOPRACOWANIA",
+          "date": "2026-01-17T08:06:52.342Z"
+        }
+      ]
+    }
+  ]
+}
