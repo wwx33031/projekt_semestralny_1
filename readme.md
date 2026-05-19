@@ -1,6 +1,6 @@
 # Alba Di Roma - Strona Restauracji Włoskiej
 
-> **Projekt semestralny I** - Aplikacja webowa restauracji z dynamicznym menu, koszykiem zakupów i generowaniem dań za pomocą AI.
+> **Projekt semestralny II** - Aplikacja webowa restauracji z dynamicznym menu, koszykiem zakupów i generowaniem dań za pomocą AI.
 
 ## Spis treści
 
